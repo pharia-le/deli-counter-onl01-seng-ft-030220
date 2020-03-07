@@ -2,20 +2,16 @@ require 'pry'
 
 katz_deli = []
 
-def line(katz_deli)
-  if katz_deli.length == 0
+def line(array)
+  if array.length == 0
     puts "The line is currently empty."
-    return
+  else
+    order = "The line is currently:"
+    array.each.with_index(1) do |name, i|
+      order << " #{i}. #{name}"
+    end
+    puts order
   end
-  
-  order = ["The line is currently:"]
-  
-  katz_deli.each_with_index do |name, i|
-    place = i + 1
-    order << "#{place}. #{name}"
-  end
-  str = order.join(" ")
-  puts str
 end
 
 def take_a_number(katz_deli, name)
